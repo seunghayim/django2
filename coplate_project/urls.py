@@ -27,10 +27,17 @@ urlpatterns = [
     path('', include('coplate.urls')),
     # allauth
     path(
-        'email-confirmation_done/',
+        'email-confirmation-required/',
         TemplateView.as_view(
-            template_name='coplate/email_confirmation_done.html'),
-        name='account_email_confirmation_done'),
+            template_name="account/email_confirmation_required.html"),
+        name='account_email_confirmation_required',
+    ),
+    path(
+        "email-confirmation-done/",
+        TemplateView.as_view(
+            template_name="account/email_confirmation_done.html"),
+        name="account_email_confirmation_done",
+    ),
     path(
         'password/change/',
         CustomPasswordChangeView.as_view(),
@@ -38,4 +45,5 @@ urlpatterns = [
     path('', include('allauth.urls')),
 ]
 
+# 미디어 파일에 대한 요청이 들어오면 미디러 ROOT안의 URL를 돌려준다.
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
