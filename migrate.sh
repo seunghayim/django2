@@ -2,4 +2,4 @@
 cd /app/
 
 /opt/venv/bin/python manage.py migrate --noinput
-/opt/venv/bin/python manage.py createsuperuser --noinput
+/opt/venv/bin/python manage.py createsuperuser --noinput || true
