@@ -3,6 +3,9 @@ FROM python:3.9.7-slim
 COPY . /app
 WORKDIR /app
 
+RUN apt-get update
+RUN yes | apt-get install python3-dev default-libmysqlclient-dev build-essential
+
 RUN python3 -m venv /opt/venv
 
 RUN /opt/venv/bin/pip install pip --upgrade && \
