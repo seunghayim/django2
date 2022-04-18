@@ -190,3 +190,4 @@ EMAIL_PORT = os.getenv("MY_EMAIL_PORT")
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.getenv("MY_EMAIL_ADDRESS")
 EMAIL_HOST_PASSWORD = os.getenv("MY_EMAIL_PASSWORD")
+CSRF_TRUSTED_ORIGINS = ['http://www.mclabha.com']
