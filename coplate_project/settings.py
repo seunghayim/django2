@@ -41,9 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'coplate',
     'widget_tweaks',
+    'storages',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+
 ]
 
 SITE_ID = 1
@@ -145,7 +147,7 @@ USE_TZ = True
 STATIC_ROOT = BASE_DIR / "static"
 STATIC_URL = '/static/'
 MEDIA_ROOT = BASE_DIR / "media"
-MEDIA_URL = '/uploads/'
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -190,4 +192,8 @@ EMAIL_PORT = os.getenv("MY_EMAIL_PORT")
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.getenv("MY_EMAIL_ADDRESS")
 EMAIL_HOST_PASSWORD = os.getenv("MY_EMAIL_PASSWORD")
-CSRF_TRUSTED_ORIGINS = ['http://www.mclabha.com']
+
+ENV_TRUSTED_ORIGINS = os.getenv("ENV_TRUSTED_ORIGINS")
+CSRF_TRUSTED_ORIGINS = [ENV_TRUSTED_ORIGINS]
+
+from .cdn.conf import *  # noqa

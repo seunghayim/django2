@@ -7,3 +7,5 @@ django-braces
 django-widget-tweaks
 Pillow
 mysqlclient==2.1.0
+django-storages
+boto3
