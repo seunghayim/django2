@@ -9,7 +9,7 @@ on:
 
 jobs:
   test_django:
-    uses: seunghayim/django2/.github/workflows/django.yml@main
+    uses: seunghayim/django2/.github/workflows/django_test.yml@main
   build:
     runs-on: ubuntu-latest
     needs: [test_django]
