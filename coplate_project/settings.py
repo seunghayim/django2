@@ -196,4 +196,8 @@ EMAIL_HOST_PASSWORD = os.getenv("MY_EMAIL_PASSWORD")
 ENV_TRUSTED_ORIGINS = os.getenv("ENV_TRUSTED_ORIGINS")
 CSRF_TRUSTED_ORIGINS = [ENV_TRUSTED_ORIGINS]
 
+ACCOUNT_ADAPTER = 'coplate_project.cdn.adapter.DefaultAccountAdapterCustom'
+URL_FRONT = str(os.getenv("ENV_TRUSTED_ORIGINS"))
+
+# DO SETTINGS
 from .cdn.conf import *  # noqa
