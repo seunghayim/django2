@@ -60,6 +60,8 @@ jobs:
           MARIADB_USER=${{ secrets.MARIADB_USER }}
           MARIADB_HOST=${{ secrets.MARIADB_HOST }}
           MARIADB_PORT=${{ secrets.MARIADB_PORT }}
+          DO_ACCESS_KEY_ID=${{ secrets.DO_ACCESS_KEY_ID }}
+          DO_SECRET_ACCESS_KEY=${{ secrets.DO_SECRET_ACCESS_KEY }}
           EOF
           kubectl delete secret django-secret
           kubectl create secret generic django-secret --from-env-file=.env-secret
