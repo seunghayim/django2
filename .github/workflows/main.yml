@@ -43,6 +43,13 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.EKS_REGION }}
+          
+      - name: EKS cluster endpoint access control
+        run: |
+          aws eks update-cluster-config \
+          --region ${{ secrets.EKS_REGION }} \
+          --name ${{ secrets.EKS_CLUSTER_NAME }} \
+          --resources-vpc-config endpointPublicAccess=true,publicAccessCidrs="${{ env.ip_address }}/32",endpointPrivateAccess=true
 
       - name: Connect to EKS cluster 
         run: aws eks --region ${{ secrets.EKS_REGION }} update-kubeconfig --name ${{ secrets.EKS_CLUSTER_NAME }}
