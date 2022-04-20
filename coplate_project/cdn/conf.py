@@ -12,8 +12,3 @@ AWS_S3_OBJECT_PARAMETERS = {
 AWS_LOCATION = "https://langhae.nyc3.digitaloceanspaces.com"
 DEFAULT_FILE_STORAGE = "coplate_project.cdn.backends.MediaRootS3BotoStorage"
 STATICFILES_STORAGE = "coplate_project.cdn.backends.StaticRootS3BotoStorage"
-
-AWS_S3_OBJECT_PARAMETERS = {
-    "CacheControl": "max-age=86400",
-    "ACL": "public-read"
-}

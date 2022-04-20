@@ -200,4 +200,7 @@ ACCOUNT_ADAPTER = 'coplate_project.cdn.adapter.DefaultAccountAdapterCustom'
 URL_FRONT = str(os.getenv("ENV_TRUSTED_ORIGINS"))
 
 # DO SETTINGS
-from .cdn.conf import *  # noqa
+if DEBUG:
+    pass
+else:
+    from .cdn.conf import *  # noqa
