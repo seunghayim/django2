@@ -148,6 +148,7 @@ STATIC_ROOT = BASE_DIR / "static"
 STATIC_URL = '/static/'
 MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_URL = '/media/'
+# STATIC_ROOT = 'https://langhae.s3.eu-west-2.amazonaws.com/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -203,4 +204,4 @@ URL_FRONT = str(os.getenv("ENV_TRUSTED_ORIGINS"))
 if DEBUG:
     pass
 else:
-    from .cdn.conf import *  # noqa
+    from .cdn.conf import *
