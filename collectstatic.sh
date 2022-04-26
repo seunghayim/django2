@@ -1,3 +1,3 @@
 #!/bin/bash
 cd /app/
-python manage.py collectstatic --noinput
+/opt/venv/bin/python manage.py collectstatic --noinput
